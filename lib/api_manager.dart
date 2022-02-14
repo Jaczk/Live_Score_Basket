@@ -8,7 +8,7 @@ class BasketAPI {
   //header
   static const header = {
     'x-rapidapi-host': "api-basketball.p.rapidapi.com",
-    'x-rapidapi-key': "bf36a9e47cmshd86bb5684faa423p111770jsn8e230cc34065"
+    'x-rapidapi-key': "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
   };
 
   Future<List<BasketMatch>> getAllMatches() async {
