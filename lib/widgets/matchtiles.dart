@@ -1,0 +1,58 @@
+import 'package:flutter/material.dart';
+
+import '../api_model/basket_model.dart';
+
+Widget matchTile(BasketMatch match) {
+  var homeGoal = match.scoreshome.scoreHome.total;
+  var awayGoal = match.scoresaway.scoreAway.total;
+  if (homeGoal == null) homeGoal = 0;
+  if (awayGoal == null) awayGoal = 0;
+
+  return Container(
+    margin: EdgeInsets.symmetric(vertical: 12.0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Expanded(
+          child: Text(
+            match.home.name,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16.0,
+            ),
+          ),
+        ),
+        Image.network(
+          match.home.logo,
+          width: 36.0,
+        ),
+        Expanded(
+          child: Text(
+            "${homeGoal} - ${awayGoal}",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16.0,
+            ),
+          ),
+        ),
+        Image.network(
+          match.away.logo,
+          width: 36.0,
+        ),
+        Expanded(
+          child: Text(
+            match.away.name,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16.0,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+}
